@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PricePilot — Compare product prices</title>
+  <meta name="description" content="Compare product prices across online stores by product name or Amazon India link.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/"> <span class="brand-mark">₹</span> PricePilot</a>
+    <span class="nav-note">Smart shopping, simpler</span>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> PRODUCT PRICE COMPARISON</div>
+      <h1>One link.<br><span>Better prices.</span></h1>
+      <p class="subhead">Type a product name or paste an Amazon India product URL to compare offers from a curated list of approved retailers.</p>
+      <form id="compare-form" class="search-box">
+        <span class="link-icon">↗</span>
+        <input id="product-url" type="text" placeholder="Enter a product name or paste an Amazon.in link…" required>
+        <button id="compare-btn" type="submit">Compare prices <span>→</span></button>
+      </form>
+      <p class="hint">Search by product name (e.g. “Sony WH-1000XM5”) or paste an Amazon.in product link.</p>
+    </section>
+
+    <section id="status" class="status hidden" role="status" aria-live="polite"></section>
+    <section id="results" class="hidden">
+      <div id="product-card" class="product-card"></div>
+      <div class="results-heading">
+        <div><p class="eyebrow">YOUR RESULTS</p><h2>Compare offers</h2></div>
+        <span id="result-count" class="count"></span>
+      </div>
+      <div id="warning" class="notice hidden"></div>
+      <div id="offers" class="offers"></div>
+      <p id="source-note" class="source-note"></p>
+    </section>
+
+    <section class="how">
+      <h2>How it works</h2>
+      <div class="steps">
+        <article><div class="step-number">01</div><h3>Enter a product</h3><p>Type a product name or paste an Amazon India link.</p></article>
+        <article><div class="step-number">02</div><h3>Find matches</h3><p>PricePilot filters shopping listings to approved retailers and checks product relevance.</p></article>
+        <article><div class="step-number">03</div><h3>Choose confidently</h3><p>Compare prices and open the store to verify the final offer.</p></article>
+      </div>
+    </section>
+    <footer>Approved stores only · Still verify the seller, final checkout domain, delivery, warranty, and product variant before purchase.</footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
